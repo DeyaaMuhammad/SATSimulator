@@ -1,0 +1,36 @@
+model Main(simulator) =
+initially
+  _3D = (), _3DView = ()
+always
+ _3D = (
+         Sphere                   // Earth Obj.
+         center = (0,0,0)
+         radius = 1       
+         color = 0.35*blue + 0.65*white             
+         rotation = (0,0,0)
+         transparency = 0.7
+
+         Text                    // Earth (home) Text
+         center=(2,0,0)          
+         color=blue  
+         coordinates = "camera"
+         content="Earth (home)"
+
+         Box                     //Satellite Obj.
+         center = (2,2,0)      
+         rotation = (0,0,0)
+         size=(0.1,0.1,0.1)
+         color= 0.5*yellow + 0.5*blue
+
+         Text                    // Satellite Text
+         center=(2.2,2,0)
+         rotation = (0,0,0)     
+         color=black  
+         coordinates = "global"
+         content="Satellite"
+
+         ),
+
+_3DView = (
+          (0,-10,0), (0, 0, 0)
+          )
